@@ -13,7 +13,7 @@ parser.add_argument('--logo', type=str, help='Path to embedded image file (defau
 args = parser.parse_args()
 try:
     if not args.input:
-        raise Exception('Empty iinput value. -i or --in argument for input file path required.')
+        raise Exception('Empty input value. -i or --in argument for input file path required.')
     f = open(args.input, encoding='utf-8', mode="r")
     data = f.read()
     if len(data) > 516:
@@ -33,7 +33,7 @@ try:
         img = qr.make_image()
     img.save(args.out)
 except Exception as err:
-    print(err)
+    sys.stderr.write(str(err)+"\n")
     # input("Press Enter to continue...")
     sys.exit(1)
 	 
