@@ -33,7 +33,7 @@ try:
         img = qr.make_image()
     img.save(args.out)
 except Exception as err:
-    print(err)
+    sys.stderr.write(err)
     # input("Press Enter to continue...")
     sys.exit(1)
 	 
